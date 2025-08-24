@@ -8,16 +8,15 @@ export default function Home() {
       {/* Background wallpaper */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/wallpaper.jpg" // put your wallpaper image in /public
+          src="/wallpaper.jpg"
           alt="Background"
           fill
           className="object-cover"
         />
-        {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      {/* Center content */}
+      {/* Content */}
       <div className="text-center space-y-6 px-4">
         <h1 className="text-4xl md:text-6xl font-bold">
           Hi, I’m <span className="text-blue-400">Yashwanth Kumar</span>
@@ -29,16 +28,10 @@ export default function Home() {
         {/* Buttons */}
         <div className="flex gap-4 justify-center mt-6">
           <Link
-            href="/about"
-            className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-xl font-medium"
-          >
-            About Me
-          </Link>
-          <Link
-            href="/projects"
+            href="/contact"
             className="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-xl font-medium"
           >
-            My Projects
+            Contact Me
           </Link>
         </div>
       </div>
