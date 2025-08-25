@@ -4,29 +4,54 @@ import NavigationButtons from "../components/NavigationButtons";
 
 export default function Contact() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-6">
-      <h1 className="text-4xl font-bold mb-6">Contact Me</h1>
+    <main className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6">
+      {/* Heading */}
+      <h1 className="text-4xl font-bold mb-4">Contact Me</h1>
 
-      <div className="space-y-4 text-center">
-        <p className="text-lg">📞 +91 9876543210</p>
-        <p className="text-lg">✉️ yashwanth@example.com</p>
-      </div>
+      {/* Name */}
+      <p className="text-xl font-semibold mb-2">Yashwanth Kumar S</p>
+
+      {/* Professional Tagline */}
+      <p className="text-lg text-gray-300 mb-6 text-center">
+        MCA Graduate | Aspiring Full Stack Developer | Cloud & Security Enthusiast
+      </p>
+
+      {/* Contact Info */}
+      <p className="mb-2 text-lg">📞 +91 91083 83983 | 83106 46687</p>
+      <p className="mb-6">✉️ yashwanthkumarsmhy@gmail.com</p>
 
       {/* Social Links */}
-      <div className="flex space-x-6 mt-6 text-2xl">
-        <a href="https://github.com/Yashwanth127" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="hover:text-gray-400" />
+      <div className="flex space-x-6 mt-4 text-3xl">
+        <a
+          href="https://github.com/Yashwanth127"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-400"
+        >
+          <FaGithub />
         </a>
-        <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="hover:text-blue-400" />
+        <a
+          href="https://www.linkedin.com/in/yashwanth-kumar-s127/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-blue-400"
+        >
+          <FaLinkedin />
         </a>
-        <a href="https://instagram.com/your-instagram" target="_blank" rel="noopener noreferrer">
-          <FaInstagram className="hover:text-pink-400" />
+        <a
+          href="https://www.instagram.com/yashwanth7_c_a_t/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-pink-400"
+        >
+          <FaInstagram />
         </a>
       </div>
 
       {/* Navigation Buttons */}
-      <NavigationButtons backHref="/home" />
+      <div className="mt-10">
+        <NavigationButtons  />
+      </div>
     </main>
   );
 }

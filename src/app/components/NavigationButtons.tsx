@@ -1,27 +1,24 @@
 "use client";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Home, ArrowLeft } from "lucide-react";
 
-interface Props {
-  backHref: string;
-}
+export default function NavigationButtons() {
+  const router = useRouter();
 
-export default function NavigationButtons({ backHref }: Props) {
   return (
-    <div className="flex gap-4 mt-10">
-      <Link
-        href={backHref}
-        className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-xl"
+    <div className="fixed bottom-6 w-full flex justify-center gap-6">
+      <button
+        onClick={() => router.back()}
+        className="p-3 rounded-full bg-gray-800 hover:bg-gray-700"
       >
-        <ArrowLeft size={20} /> Back
-      </Link>
-
-      <Link
-        href="/home"
-        className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-xl"
+        <ArrowLeft className="w-6 h-6 text-white" />
+      </button>
+      <button
+        onClick={() => router.push("/home")}
+        className="p-3 rounded-full bg-gray-800 hover:bg-gray-700"
       >
-        <Home size={20} /> Home
-      </Link>
+        <Home className="w-6 h-6 text-white" />
+      </button>
     </div>
   );
 }

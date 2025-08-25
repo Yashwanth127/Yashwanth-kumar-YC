@@ -14,12 +14,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* Navbar */}
-        <nav className="bg-gray-900 text-white p-4 flex gap-6">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-        </nav>
-
         {/* Page Content */}
         <main>{children}</main>
       </body>
