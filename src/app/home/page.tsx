@@ -25,7 +25,7 @@ export default function Home() {
           href="/calculator"
           icon="/icons/calculator.png"
         />
-        <AppIcon name="Music" href="/spotify" icon="/icons/spotify.png" />
+        <AppIcon name="Music" href="/music" icon="/icons/spotify.png" />
         {/* Add more apps here */}
       </div>
     </main>
