@@ -7,13 +7,12 @@ export default function Calculator() {
 
   const handleClick = (value: string) => {
     if (value === "C") {
-      setInput(""); // Clear everything
+      setInput(""); // Clear input
     } else if (value === "⌫") {
-      setInput(input.slice(0, -1)); // Remove last character
+      setInput(input.slice(0, -1)); // Backspace
     } else if (value === "=") {
       try {
-        // Evaluate safely
-        setInput(eval(input).toString());
+        setInput(eval(input).toString()); // Calculate
       } catch {
         setInput("Error");
       }
@@ -22,7 +21,6 @@ export default function Calculator() {
     }
   };
 
-  // Add new buttons for "C" and "⌫"
   const buttons = [
     "7", "8", "9", "/",
     "4", "5", "6", "*",
@@ -32,12 +30,12 @@ export default function Calculator() {
   ];
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6">
-      <h1 className="text-3xl font-bold mb-4">Calculator</h1>
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-gray-800">
+      <h1 className="text-2xl font-bold mb-6">CALCULATOR</h1>
       
-      <div className="bg-gray-900 p-4 rounded-xl w-80">
+      <div className="bg-white p-5 rounded-lg shadow-md w-80">
         {/* Display */}
-        <div className="bg-gray-800 p-4 rounded-lg mb-4 text-right text-2xl">
+        <div className="bg-gray-200 p-4 rounded text-right text-xl font-mono mb-4 overflow-x-auto">
           {input || "0"}
         </div>
 
@@ -47,7 +45,11 @@ export default function Calculator() {
             <button
               key={btn}
               onClick={() => handleClick(btn)}
-              className="bg-gray-700 hover:bg-gray-600 p-4 rounded-lg text-lg font-medium"
+              className={`p-4 rounded font-semibold transition 
+                ${btn === "C" ? "bg-red-400 hover:bg-red-500 text-white" :
+                btn === "⌫" ? "bg-yellow-400 hover:bg-yellow-500 text-white" :
+                btn === "=" ? "bg-green-500 hover:bg-green-600 text-white" :
+                "bg-gray-300 hover:bg-gray-400"}`}
             >
               {btn}
             </button>
@@ -56,7 +58,9 @@ export default function Calculator() {
       </div>
 
       {/* Back + Home buttons */}
-      <NavigationButtons />
+      <div className="mt-6">
+        <NavigationButtons />
+      </div>
     </main>
   );
 }

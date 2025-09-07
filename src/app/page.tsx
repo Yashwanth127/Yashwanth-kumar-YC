@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function LockScreen() {
-  const [time, setTime] = useState<string>(""); // start empty to avoid hydration mismatch
-  const [date, setDate] = useState<string>(""); // start empty to avoid hydration mismatch
-  const [unlocked, setUnlocked] = useState(false);
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -28,28 +27,32 @@ export default function LockScreen() {
       setDate(formattedDate);
     }
 
-    updateDateTime(); // run immediately on mount
+    updateDateTime();
     const interval = setInterval(updateDateTime, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
   const unlock = () => {
-    setUnlocked(true);
-    router.push("/home"); // go to Home page after unlock
+    console.log("Unlock clicked ✅");
+    router.push("/home"); // go to Home page
   };
 
   return (
-    <main className="relative min-h-screen flex items-center justify-center text-white bg-black">
-      {!unlocked ? (
-        <div className="text-center space-y-4 cursor-pointer" onClick={unlock}>
-          <h1 className="text-6xl font-bold">{time}</h1>
-          <p className="text-lg">{date}</p>
-          <p className="animate-bounce text-sm text-gray-300">
-            ⬆️ Swipe up or click to unlock
-          </p>
-        </div>
-      ) : null}
+    <main
+      className="relative min-h-screen flex items-center justify-center bg-gray-100 text-gray-800 overflow-hidden"
+      onClick={unlock}
+    >
+      {/* Background name watermark */}
+      <h1 className="absolute text-[4rem] font-bold text-gray-300 opacity-20 select-none">
+       YASHWANTH KUMAR S
+      </h1>
+
+      {/* Foreground content */}
+      <div className="text-center space-y-2 cursor-pointer">
+        <h1 className="text-4xl font-semibold">{time}</h1>
+        <p className="text-base">{date}</p>
+        <p className="text-sm text-gray-500">Click anywhere to unlock</p>
+      </div>
     </main>
   );
 }

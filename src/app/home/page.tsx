@@ -1,20 +1,10 @@
 "use client";
-import Image from "next/image";
 import AppIcon from "../components/AppIcon";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-center text-white">
-      {/* Background wallpaper */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/wallpaper.jpg"
-          alt="Background"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
+   <main className="relative min-h-screen flex flex-col items-center justify-center text-gray-800 bg-gray-100">
+
 
       {/* Apps grid */}
       <div className="grid grid-cols-3 gap-6 mt-20">
@@ -28,6 +18,11 @@ export default function Home() {
         <AppIcon name="Music" href="/music" icon="/icons/spotify.png" />
         {/* Add more apps here */}
       </div>
+
+      {/* Footer with your name + copyright */}
+      <footer className="absolute bottom-4 text-sm text-gray-400 text-center w-full">
+        © {new Date().getFullYear()} YASHWANTH KUMAR S — All Rights Reserved
+      </footer>
     </main>
   );
 }

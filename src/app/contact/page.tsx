@@ -4,7 +4,8 @@ import NavigationButtons from "../components/NavigationButtons";
 
 export default function Contact() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6">
+    <main className="relative min-h-screen flex flex-col items-center justify-center text-gray-800 bg-gray-100">
+
       {/* Heading */}
       <h1 className="text-4xl font-bold mb-4">Contact Me</h1>
 
