@@ -12,6 +12,11 @@ const songs: Song[] = [
   { title: "Song 2", file: "/songs/song2.mp3" },
   { title: "Song 3", file: "/songs/song3.mp3" },
   { title: "Song 4", file: "/songs/song4.mp3" },
+  { title: "Song 5", file: "/songs/song5.mp3" },
+  { title: "Song 6", file: "/songs/song6.mp3" },
+  { title: "Song 7", file: "/songs/song7.mp3" },
+  { title: "Song 8", file: "/songs/song8.mp3" },
+
 ];
 
 export default function Music() {
