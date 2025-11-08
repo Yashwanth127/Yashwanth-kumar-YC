@@ -10,6 +10,13 @@ export default function HomePage() {
       <div className="grid grid-cols-3 gap-6 mt-20">
         <AppIcon name="Contact Me" href="/contact" icon="/icons/contact.png" />
         <AppIcon name="Projects" href="/projects" icon="/icons/projects.png" />
+        <AppIcon name="Certifications" href="/Certifications" icon="/icons/Certification.png" />
+        <AppIcon
+  name="Resume"
+  href="/resume"
+  icon="/icons/resume.png"
+/>
+
         <AppIcon
           name="Calculator"
           href="/calculator"
